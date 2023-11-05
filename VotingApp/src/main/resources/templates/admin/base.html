@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:fragment="layout(content)">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}" />
+    <link rel="stylesheet" th:href="@{/css/bootstrap2.css}" />
+    <link rel="stylesheet" th:href="@{/css/table.css}" />
+    <title th:text="${title}">Title</title>
+    <style>
+        /* Add custom styles here */
+        body {
+            font-family: Arial, sans-serif;
+          background: rgb(140,146,198);
+background: radial-gradient(circle, rgba(140,146,198,1) 41%, rgba(203,179,208,1) 98%);
+           margin: 0;
+            padding: 0;
+        }
+
+        ul.navbar {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(128, 128, 128);
+            overflow: hidden;
+        }
+
+        li.nav-item {
+            float: left;
+        }
+
+        li.nav-item a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li.nav-item a:hover {
+            background-color: rgb(0, 0, 0);
+        }
+
+        div.content {
+            padding: 20px;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <ul class="navbar">
+        <li class="nav-item"><a class="active" th:href="@{/admin/}">Home</a></li>
+        <li class="nav-item"><a>Welcome Admin</a></li>
+        <li class="nav-item"><a th:href="@{/admin/viewadmins}">View Admins</a></li>
+        <li class="nav-item"><a th:href="@{/admin/viewusers}">View Voters</a></li>
+        <li class="nav-item"><a th:href="@{/admin/votedetails}">View Candidates</a></li>
+        <li class="nav-item"><a th:href="@{/logout}">Logout</a></li>
+    </ul>
+    <!-- Navbar End -->
+    <div class="content" th:replace="${content}">
+    </div>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{base::layout(~{::section})}">
+
+<head>
+	<meta charset="UTF-8" />
+	<title>ReadyVote</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <style>
+    /* Add your custom CSS here */
+    .carousel-item img {
+      max-height: 600px;
+      object-fit: cover;
+    }
+    .footer {
+      background-color: #0a0a0bc8;
+      padding: 20px 0;
+      text-align: center;
+    }
+    .social-icons {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0;
+    }
+    .social-icons li {
+      display: inline-block;
+      margin: 0 10px;
+    }
+    .social-icons a {
+      color: #bca7a7;
+      font-size: 24px;
+      text-decoration: none;
+    }
+    .additional-links {
+      list-style: none;
+      padding: 0;
+      margin-top: 10px;
+    }
+    .additional-links li {
+      margin-bottom: 5px;
+    }
+    .p {
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+	<section class="center">
+		<div class="text-center">
+
+
+			<h1 class="font-weight-bold"> Online Voting Application </h1>
+				<div th:if=${session.msg}>
+					<h3 th:text="${session.msg}" style="color:red"></h3>
+					<th:block th:text="${#session.removeAttribute('msg')}"></th:block>
+
+				</div>
+
+		
+
+
+	
+	 <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+    
+    <div class="carousel-inner">
+      <!--<div class="carousel-item active">
+        <img src="https://www.drishtiias.com/images/blogs/Right_to_Vote_Drishti_IAS_English.png" class="d-block w-100" alt="Slide 1">
+      </div>-->
+      <div class="carousel-item">
+        <img src="https://media.tegna-media.com/assets/KWES/images/7d365fdc-1ad2-4f8e-ab0b-3cb763b03852/7d365fdc-1ad2-4f8e-ab0b-3cb763b03852_1920x1080.png" class="d-block w-100" alt="Slide 3">
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExample" role="button" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExample" role="button" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </a>
+  </div>
+
+ <!-- Grids -->
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-4 mb-4">
+      <div class="card">
+        <img src="https://i.pinimg.com/564x/7a/bd/64/7abd64d1ef38426fcb48d16c882017bc.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Step 1:</h5>
+          <p class="card-text">Register for Voting in ReadyVote.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mb-4">
+      <div class="card">
+        <img src="https://i.pinimg.com/564x/4b/cc/2c/4bcc2caa3831671f40f3337e35655058.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Step 2:</h5>
+          <p class="card-text">Select the Category you want to vote for.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mb-4">
+      <div class="card">
+        <img src="https://i.pinimg.com/564x/ff/6f/a7/ff6fa700dccb5698e56c3919488d6b96.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Step 3:</h5>
+          <p class="card-text">Vote for the Candidate you want to vote for.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+    <script th:src="@{https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js}"></script>
+    <script th:src="@{https://kit.fontawesome.com/a076d05399.js}" crossorigin="anonymous"></script>
+</div>
+</section>
+</body>
+</html>

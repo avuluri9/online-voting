@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{base::layout(~{::section})}">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+</head>
+<body>
+	<section class = "center"  style="background: rgb(207, 193, 217); background: linear-gradient(90deg, rgba(207, 193, 217, 1) 0%, rgba(34, 94, 125, 1) 73%, rgba(104, 79, 125, 1) 100%);">
+	
+<form th:action="@{/dologin}" method="post">
+
+    <h1 style="font-size: 24px; text-align: center;">Signin</h1>
+    
+    <div th:if="${param.error}" style="color: red; text-align: center;">
+        Invalid username and password<br><br>
+    </div>
+
+    <div th:if="${param.logout}" style="color: red; text-align: center;">
+        You have been logged out<br><br>
+    </div>
+
+    <label for="username" style="font-weight: bold;">Email Id:</label>
+    <input type="text" name="username" id="username" placeholder="Enter Your Email Id" required style="width: 25%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;"><br><br>
+
+    <label for="password" style="font-weight: bold;">Password:</label>
+    <input type="password" name="password" id="password" placeholder="Enter Your Password" required style="width: 25%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;"><br><br>
+
+    <input type="submit" value="Signin" style="background-color: #4CAF50; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">
+
+</form>
+
+
+<br>
+
+
+	<br>
+	<div>
+			<img src="https://wpsu.psu.edu/wp-content/themes/wpsu/images/vote/vote.png" ></div>	
+	
+		
+	</section>
+</body>
+</html>

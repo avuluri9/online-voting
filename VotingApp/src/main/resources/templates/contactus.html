@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{base::layout(~{::section})}">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+</head>
+<body>
+	<section class = "center" >
+	
+
+<h1>Contact Us</h1>
+		<div th:if=${session.msg}>
+			<h3 th:text="${session.msg}" style="color:red"></h3>
+   		
+   		<div th:text="${@sessionUtilityBean.removeVerificationMessageFromSession()}"></div>
+   		
+   		</div>
+   		<div>
+    <h1 style="text-align: center;">Send an Email</h1>
+    <form action="/sendEmail" method="post" style="max-width: 400px; margin: 0 auto; background-color: #ffffff; padding: 20px; border-radius: 5px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);">
+        <label for="to">Recipient's Email:</label>
+        <input type="text" id="to" name="to" required style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 5px;"><br>
+
+        <label for="subject">Subject:</label>
+        <input type="text" id="subject" name="subject" required style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 5px;"><br>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 5px;"></textarea><br>
+
+        <input type="submit" value="Send Email" style="background-color: #007bff; color: #fff; border: none; border-radius: 5px; padding: 10px 20px; cursor: pointer;">
+    </form>
+
+			   </div>
+   		</section>
+</body>
+</html>

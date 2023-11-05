@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:fragment="layout(content)">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}" />
+    <title th:text="${title}">Title</title>
+    
+    <style>
+      /* Add custom CSS styles here */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+      }
+      
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        background-color: #333;
+      }
+      
+      ul li {
+        display: inline;
+        margin: 0;
+        padding: 10px;
+      }
+      
+      ul li a {
+        text-decoration: none;
+        color: #fff;
+      }
+      
+      .active {
+        background-color: #555;
+      }
+    </style>
+  </head>
+  <body> 
+    <ul>
+      <li><a class="active" th:href="@{/}">Home</a></li>
+      <li><a th:href="@{/register}">New Voter Registration</a></li>
+      <li><a th:href="@{/user}">Signin</a></li>      
+      <li><a th:href="@{/about}">About</a></li>
+      <li><a th:href="@{/contactus}">Contact Us</a></li>
+    </ul>
+    
+    <div th:replace="${content}">
+    </div>
+  </body>
+</html>
